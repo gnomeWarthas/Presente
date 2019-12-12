@@ -36,7 +36,7 @@ nav li{
 /** SECTIONS **/
 section{
   align-self: center;
-  background-color: antiquewhite;
+  background-color: var(--background-color);
   width:500px;
   height: 70vh;
 }

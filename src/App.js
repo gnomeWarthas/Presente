@@ -10,27 +10,39 @@ class App extends React.Component {
       sections:[
         {
           id:'about',
-          title:'About'
+          number:1,
+          title:'Thomas WAGNER',
+          content:"Hello, I am Thomas. I am learning web and application development."
         },
         {
           id:'work',
-          title:'Work'
+          number:2,
+          title:'Work',
+          content:''
         },
         {
           id:'contact',
-          title:'Contact'
+          number:3,
+          title:'Contact',
+          content:''
         } 
       ],
-      displayedSection:'about'
+      displayedSection:[1,'about']
     }
     this.handleNavClick = this.handleNavClick.bind(this)
   }
   handleNavClick(e){
     const arr = this.state.sections.map(x=>{
-      if (e.target.id.replace('nav','')===x['id']){
-        if (x['id'] !== this.state.displayedSection){
-          this.setState({displayedSection:x['id']})
-          animateCSS('#'+x['id'], 'fadeInLeft')
+      if (parseInt(e.target.id[3])===x.number){
+        if (x.number !== this.state.displayedSection[0]){
+          // hide the previous displayed section
+          const previousSection = this.state.displayedSection[1]
+          const [outDirection, inDirection] = (this.state.displayedSection[0] < parseInt(e.target.id[3]))?['fadeOutLeft','fadeInRight']:['fadeOutRight','fadeInLeft']
+          animateCSS('#'+previousSection, 'faster')
+          animateCSS('#'+previousSection, outDirection, ()=>this.setState({displayedSection:[x.number, x.id]}))
+          // display the clicked section
+          animateCSS('#'+x.id, 'fast')
+          animateCSS('#'+x.id, inDirection)
         }
       }
       return x;
@@ -41,15 +53,16 @@ class App extends React.Component {
   render(){
     const sections = this.state.sections.map(x=>{
       return(
-        <section id={x['id']} style={(this.state.displayedSection === x['id'])?{display:'block'}:{display:'none'}}>
-          <h1>{x['title']}</h1>
+        <section id={x.id} key={x.number} style={(this.state.displayedSection[1] === x.id)?{display:'block'}:{display:'none'}}>
+          <h1>{x.title}</h1>
+          <p>{x.content}</p>
         </section>
       )
     })
     const navs = this.state.sections.map(x=>{
       return(
-        <li id={"nav" + x['id']} onClick={this.handleNavClick}>
-         {x['title']}
+        <li id={"nav" +x.number+x.id} key={x.number} onClick={this.handleNavClick}>
+         {x.id.toUpperCase()}
         </li>
       )
     })
