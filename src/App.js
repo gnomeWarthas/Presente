@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state={
-      logoUrl: "./logo192.png",
+      logoUrl: "./logo.png",
       sections:[
         {
           id:'about',
@@ -32,7 +32,7 @@ class App extends React.Component {
     this.handleNavClick = this.handleNavClick.bind(this)
   }
   handleNavClick(e){
-    const arr = this.state.sections.map(x=>{
+    this.state.sections.forEach(x=>{
       if (parseInt(e.target.id[3])===x.number){
         if (x.number !== this.state.displayedSection[0]){
           // hide the previous displayed section
