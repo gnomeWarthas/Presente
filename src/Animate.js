@@ -1,9 +1,9 @@
 const animateCSS = (element, animationName, callback) => {
     const node = document.querySelector(element)
-    node.classList.add('animated', animationName)
+    node.classList.add(animationName)
 
     function handleAnimationEnd() {
-        node.classList.remove('animated', animationName)
+        node.classList.remove(animationName)
         node.removeEventListener('animationend', handleAnimationEnd)
 
         if (typeof callback === 'function') callback()
