@@ -38,10 +38,8 @@ class App extends React.Component {
           // hide the previous displayed section
           const previousSection = this.state.displayedSection[1]
           const [outDirection, inDirection] = (this.state.displayedSection[0] < parseInt(e.target.id[3]))?['fadeOutLeft','fadeInRight']:['fadeOutRight','fadeInLeft']
-          animateCSS('#'+previousSection, 'faster')
           animateCSS('#'+previousSection, outDirection, ()=>this.setState({displayedSection:[x.number, x.id]}))
           // display the clicked section
-          animateCSS('#'+x.id, 'fast')
           animateCSS('#'+x.id, inDirection)
         }
       }

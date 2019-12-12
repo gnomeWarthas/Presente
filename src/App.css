@@ -40,7 +40,7 @@ nav li:hover{
   height:40px;
 }
 #logo > img{
-  margin-left:10vw;
+  margin-left:30vw;
   max-height:30px;
   border:none;
 }
@@ -50,4 +50,61 @@ section{
   background-color: var(--background-color);
   width:500px;
   height: 70vh;
+}
+/** ANIMATIONS **/
+.fadeInLeft {
+  animation-name: fadeInLeft;
+  animation-duration:0.5s;
+}
+@keyframes fadeInLeft {
+  0% {
+     opacity: 0;
+     transform: translateX(-50px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+}
+.fadeInRight {
+  animation-name: fadeInRight;
+  animation-duration:0.5s;
+}
+@keyframes fadeInRight {
+  0% {
+     opacity: 0;
+     transform: translateX(50px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+}
+.fadeOutLeft {
+  animation-name: fadeOutLeft;
+  animation-duration:0.5s;
+}
+@keyframes fadeOutLeft {
+  0% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+  100% {
+     opacity: 0;
+     transform: translateX(-50px);
+  }
+}
+.fadeOutRight {
+  animation-name: fadeOutRight;
+  animation-duration:0.5s;
+}
+@keyframes fadeOutRight {
+  0% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+  100% {
+     opacity: 0;
+     transform: translateX(50px);
+  }
 }
