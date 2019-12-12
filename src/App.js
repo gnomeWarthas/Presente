@@ -62,7 +62,7 @@ class App extends React.Component {
     })
     const navs = this.state.sections.map(x=>{
       return(
-        <li id={"nav" +x.number+x.id} key={x.number} onClick={this.handleNavClick} class={(x.number===1)?'currentNav':''}>
+        <li id={"nav" +x.number+x.id} key={x.number} onClick={this.handleNavClick} className={(x.number===1)?'currentNav':''}>
          {x.id.toUpperCase()}
         </li>
       )
