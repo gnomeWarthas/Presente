@@ -35,6 +35,9 @@ class App extends React.Component {
     this.state.sections.forEach(x=>{
       if (parseInt(e.target.id[3])===x.number){
         if (x.number !== this.state.displayedSection[0]){
+          // menu animation
+          document.getElementsByClassName('currentNav').item(0).classList.remove('currentNav')
+          e.target.classList.add('currentNav')
           // hide the previous displayed section
           const previousSection = this.state.displayedSection[1]
           const [outDirection, inDirection] = (this.state.displayedSection[0] < parseInt(e.target.id[3]))?['fadeOutLeft','fadeInRight']:['fadeOutRight','fadeInLeft']
@@ -59,7 +62,7 @@ class App extends React.Component {
     })
     const navs = this.state.sections.map(x=>{
       return(
-        <li id={"nav" +x.number+x.id} key={x.number} onClick={this.handleNavClick}>
+        <li id={"nav" +x.number+x.id} key={x.number} onClick={this.handleNavClick} class={(x.number===1)?'currentNav':''}>
          {x.id.toUpperCase()}
         </li>
       )

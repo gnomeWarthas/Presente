@@ -19,6 +19,7 @@ nav{
 }
 nav > ul{
   margin:0px;
+  padding:0px;
   display:flex;
   justify-content:center;
 }
@@ -27,21 +28,30 @@ nav li{
   padding: 15px 30px;
   font-size:0.8em;
   opacity:0.5;
+  border-bottom: 1px solid var(--background-color-more);
 }
 nav li:hover{
   cursor: pointer;
   opacity:1;
+  padding-bottom:13px;
+  border-bottom: 3px solid var(--background-color-more);
+}
+.currentNav{
+  opacity:1;
+  padding-bottom:13px;
+  border-bottom: 3px solid var(--background-color-more);
 }
 #logo{
   background-color:white;
   border-bottom: 1px solid var(--background-color-more);
   display:flex;
   align-items:center;
+  justify-content: flex-start;
   height:40px;
 }
 #logo > img{
-  margin-left:30vw;
-  max-height:30px;
+  margin-left:40px;
+  max-height:35px;
   border:none;
 }
 /** SECTIONS **/
@@ -50,6 +60,11 @@ section{
   background-color: var(--background-color);
   width:500px;
   height: 70vh;
+}
+section h1{
+  text-align:center;
+  font-weight: 400;
+  font-size: 2em;
 }
 /** ANIMATIONS **/
 .fadeInLeft {
