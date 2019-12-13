@@ -1,7 +1,7 @@
 const projects=[
     {
       id:1,
-      image:'./img/portfolio.png',
+      image:'./img/portfolio.jpg',
       name:'Portfolio',
       description:'A simple portfolio to present my work, who I am and where to find me on the social networks',
       stack:['react.js', 'css animation']
@@ -22,14 +22,14 @@ const projects=[
     },
     {
       id:4,
-      image:'./img/dashboard.png',
+      image:'./img/dashboard.jpg',
       name:'Dashboard',
       description:'A simple dashboard that you can plug on an online datasource (API with JSON file expected)',
       stack:['react.js', 'D3.js']
     },
     {
       id:5,
-      image:'./img/mylittleadventure.png',
+      image:'./img/mylittleadventure.jpg',
       name:'My little adventure',
       description:'Tiny game developped with pixi.js where you start a little adventure on a small map',
       stack:['react.js', 'pixi.js']
