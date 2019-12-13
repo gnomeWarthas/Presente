@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import animateCSS from './Animate';
+import projects from './projects';
 
 class App extends React.Component {
   constructor(props){
@@ -17,7 +18,7 @@ class App extends React.Component {
           id:'work',
           number:2,
           title:'Work',
-          content:<Work text="coucouille"/>
+          content:<Work content={projects} />
         },
         {
           id:'contact',
@@ -53,19 +54,16 @@ class App extends React.Component {
     //
   }
   render(){
+    // Sections
     const sections = this.state.sections.map(x=>{
       return(
-        <section id={x.id} key={x.number} style={(this.state.displayedSection[1] === x.id)?{display:'block'}:{display:'none'}}>
-          <h1>{x.title}</h1>
-          <p>{x.content}</p>
-        </section>
+        <Section id={x.id} key={x.number} style={(this.state.displayedSection[1] === x.id)?{display:'block'}:{display:'none'}} title={x.title} content={x.content} />
       )
     })
+    // Nav menu
     const navs = this.state.sections.map(x=>{
       return(
-        <li id={"nav" +x.number+x.id} key={x.number} onClick={this.handleNavClick} className={(x.number===1)?'currentNav':''}>
-         {x.id.toUpperCase()}
-        </li>
+        <NavItem id={x.id} number={x.number} key={x.number} handleNavClick={this.handleNavClick} class={(x.number===1)?'currentNav':''} />
       )
     })
     return (
@@ -90,10 +88,43 @@ const Logo = (props) => {
     </div>
   )
 }
+const NavItem = (props) => {
+  return(
+    <li id={"nav"+props.number+props.id} onClick={props.handleNavClick} className={props.class}>
+        {props.id.toUpperCase()}
+    </li>
+  )
+}
+const Section = (props) => {
+  return(
+    <section id={props.id} style={props.style}>
+      <h1>{props.title}</h1>
+      {props.content}
+    </section>
+  )
+}
 const Work = (props) => {
+  // Projects
+  const projectList = props.content.map(x=>{
+    return(
+      <Card id={x.id} key={x.id} name={x.name} image={x.image} description={x.description} stack={x.stack.map((a,n)=><li key={n}>{a}</li>)} />
+    )
+  })  
   return (
     <div id="work">
-      {props.text}
+      {projectList}
+    </div>
+  )
+}
+const Card = (props) => {
+  return(
+    <div id={props.id} className='card'>
+      <h2>{props.name}</h2>
+      <img src={props.image} alt={props.name} />
+      <p>{props.description}</p>
+      <ul>
+        {props.stack}
+      </ul>
     </div>
   )
 }

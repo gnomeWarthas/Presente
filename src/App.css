@@ -2,10 +2,12 @@
 :root{
   --background-color:rgb(230, 240, 240);
   --background-color-more:rgb(166, 179, 179);
+  --shadow-color:rgba(166, 179, 179, 0.2);
   --text-color:rgb(20,40,40);
 }
 body{
   color:var(--text-color);
+  background-color: var(--background-color);
 }
 #app{
   display:flex;
@@ -60,7 +62,7 @@ nav li:hover{
 section{
   align-self: center;
   background-color: var(--background-color);
-  width:500px;
+  width:700px;
   height: 70vh;
 }
 section h1{
@@ -68,7 +70,72 @@ section h1{
   font-weight: 400;
   font-size: 2em;
 }
+/** PROJECTS **/
+#work{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 20px;
+}
+.card{
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  border-radius:5px;
+  padding:10px 20px;
+  width: 180px;
+  height:250px;
+}
+.card:hover{
+  animation-name: cardPick;
+  animation-duration:0.5s;
+  animation-fill-mode: forwards;
+}
+.card > h2{
+  align-self:flex-start;
+  margin:5px 0px 15px 0px;
+  width:100%;
+  font-weight: 300;
+  font-size:1.2em;
+  border-bottom:1px solid var(--background-color);
+}
+.card > img{
+  max-width:160px;
+  max-height:100px;
+}
+.card > p{
+  font-size:0.8em;
+}
+.card > ul{
+  margin:0px;
+  padding:0px;
+  align-self:flex-start;
+  display:flex;
+  justify-content: flex-start;
+}
+.card li{
+  list-style-type: none;
+  background-color: var(--background-color-more);
+  color:white;
+  padding:3px 10px;
+  margin-left:10px;
+  font-size:0.7em;
+  border-radius:10px;
+}
+.card li:nth-child(1){
+  margin-left:0px;
+}
 /** ANIMATIONS **/
+@keyframes cardPick{
+  0% {
+    transform: translateY(0px)
+  }
+  100%{
+    transform: translateY(-10px);
+    box-shadow: 2px 8px 10px var(--shadow-color)
+  }
+}
 .navFadeOut {
   animation-name: navFadeOut;
   animation-duration:0.3s;
