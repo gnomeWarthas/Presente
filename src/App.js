@@ -12,7 +12,7 @@ class App extends React.Component {
           id:'about',
           number:1,
           title:'About me',
-          content:"Hello, I am Thomas. I am learning web and application development."
+          content:<About />
         },
         {
           id:'work',
@@ -125,6 +125,14 @@ const Card = (props) => {
       <ul>
         {props.stack}
       </ul>
+    </div>
+  )
+}
+const About = (props) => {
+  return(
+    <div id="about">
+      <p>Hello, I am Thomas.</p>
+      <p>I am learning web and application development</p>
     </div>
   )
 }
