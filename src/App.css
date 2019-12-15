@@ -132,6 +132,21 @@ section h1{
 .card li:nth-child(1){
   margin-left:0px;
 }
+#links {
+  align-self: flex-end;
+  position:relative;
+  top:-28px;
+}
+#links img {
+  max-width: 20px;
+  opacity: 0.5;
+}
+#links img:hover {
+  opacity:1;
+}
+#links > a {
+  margin-left:5px;
+}
 /** ANIMATIONS **/
 @keyframes cardPick{
   0% {

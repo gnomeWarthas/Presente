@@ -107,7 +107,7 @@ const Work = (props) => {
   // Projects
   const projectList = props.content.map(x=>{
     return(
-      <Card id={x.id} key={x.id} name={x.name} image={x.image} description={x.description} stack={x.stack.map((a,n)=><li key={n}>{a}</li>)} />
+      <Card id={x.id} key={x.id} name={x.name} image={x.image} description={x.description} linkGithub={x.linkGithub} linkLive={x.linkLive} stack={x.stack.map((a,n)=><li key={n}>{a}</li>)} />
     )
   })  
   return (
@@ -120,6 +120,10 @@ const Card = (props) => {
   return(
     <div id={props.id} className='card'>
       <h2>{props.name}</h2>
+      <div id="links">
+        <a href={props.linkGithub} alt='View code' target='_blank' rel="noopener noreferrer"><img src='./img/icon-github.png' alt=''/></a>
+        <a href={props.linkLive} alt="Live demo" target='_blank' rel="noopener noreferrer"><img src='./img/icon-web.png' alt='' /></a>
+      </div>
       <p>{props.description}</p>
       <img src={props.image} alt={props.name} />
       <ul>
