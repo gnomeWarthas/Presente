@@ -135,8 +135,12 @@ const Card = (props) => {
 const About = (props) => {
   return(
     <div id="about">
-      <p>Hello, I am Thomas.</p>
-      <p>I am learning web and application development</p>
+      <img src='./img/me.jpg' alt='me' />
+      <p class="subtitle">Hello, I am Thomas,</p>
+      <div id="aboutText">
+        I worked 12 years in IT, on application support, management and parameterization, mostly around Enterprise Architecture domain.<br />You can have a quick look on my <a href="https://www.linkedin.com/in/thomas-wagner-88897852/" target="_blank" rel="noopener noreferrer">linkedIn profile</a> for more detail.
+        <br/><br/>I currently am on a sabbatical year to explore and learn about code, web and application development, design, and many things I wanted to go further with since a long time.
+      </div>
     </div>
   )
 }
