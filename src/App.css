@@ -2,6 +2,7 @@
 :root{
   --background-color:rgb(230, 240, 240);
   --background-color-more:rgb(166, 179, 179);
+  --background-color-less:rgb(209, 218, 218);
   --shadow-color:rgba(166, 179, 179, 0.5);
   --text-color:rgb(20,40,40);
 }
@@ -81,13 +82,15 @@ section h1{
   border:5px solid white;
 }
 #aboutText{
-  width:320px;
+  width:360px;
   text-align:justify;
-  padding:30px;
   border-radius:5px;
   font-style: italic;
   color:var(--background-color-more);
   background-color: white;
+}
+#aboutText p{
+  margin:30px;
 }
 #aboutText a{
   text-decoration: underline;
@@ -97,9 +100,32 @@ section h1{
   text-decoration:none;
   color:var(--text-color);
 }
-#about .subtitle{
-  align-self:center;
+#introText{
+  width:340px;
+  display:flex;
+  justify-content: flex-start;
+  color:var(--background-color-more)
+}
+#introText p{
+  margin-top:25px;
   font-size:1.2em;
+}
+#introText i{
+  position:relative;
+  bottom:-30px;
+  margin:0px 40px 0px 0px;
+  font-size:3em;
+}
+#dots{
+  align-self:flex-end;
+  position:relative;
+  top:-30px;
+  right:-20px;
+  background-color: var(--background-color-less);
+  border-radius:5px;
+  padding:5px 20px;
+  color:white;
+  font-size: 2em;
 }
 /** CONTACT **/
 #contact{
