@@ -101,6 +101,23 @@ section h1{
   align-self:center;
   font-size:1.2em;
 }
+/** CONTACT **/
+#contact{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+#networks a{
+  font-size:1.2em;
+  margin:5px;
+  color:var(--text-color);
+}
+#phone{
+  margin-top:0px;
+}
+#networks a:hover{
+  opacity:0.7;
+}
 /** PROJECTS **/
 #work{
   display:grid;

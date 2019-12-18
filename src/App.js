@@ -24,7 +24,7 @@ class App extends React.Component {
           id:'contact',
           number:3,
           title:'Contact',
-          content:''
+          content:<Contact />
         } 
       ],
       logoUrl: "./logo.png",
@@ -144,5 +144,19 @@ const About = (props) => {
     </div>
   )
 }
-
+const Contact = (props) => {
+  return(
+    <div id="contact">
+      <p id="email">{'thomasdotwagneratlivedotfr'.replace(/dot/g,'.').replace(/at/g,'@')}</p>
+      <p id="phone">{'06dotTTdot36dot63dot7T'.replace(/dot/g,'.').replace(/T/g,'2')}</p>
+      <p id="networks">
+        <a href='https://twitter.com/Warthas2' target='_blank' rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+        <a href='https://github.com/gnomeWarthas' target='_blank' rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href='https://www.freecodecamp.org/fcc970cb3b2-e345-4a79-81ac-db98ffb618d1' target='_blank' rel="noopener noreferrer"><i class="fab fa-free-code-camp"></i></a>
+        <a href='https://codepen.io/Warthas' target='_blank' rel="noopener noreferrer"><i class="fab fa-codepen"></i></a>
+        <a href='https://www.linkedin.com/in/thomas-wagner-88897852/' target='_blank' rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+      </p>
+    </div>
+  )
+}
 export default App;
