@@ -169,7 +169,7 @@ section h1{
 .card > h2{
   align-self:flex-start;
   margin:0px;
-  padding:0px 0px 10px 0px;
+  padding:2px 0px 10px 0px;
   width:100%;
   font-weight: 500;
   font-size:0.8em;
