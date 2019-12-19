@@ -85,12 +85,14 @@ section h1{
   width:360px;
   text-align:justify;
   border-radius:5px;
+  font-size: 0.9em;
+  line-height: 1.6;
   font-style: italic;
   color:var(--background-color-more);
   background-color: white;
 }
 #aboutText p{
-  margin:30px;
+  margin:20px 30px;
 }
 #aboutText a{
   text-decoration: underline;
