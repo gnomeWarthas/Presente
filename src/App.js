@@ -137,14 +137,14 @@ const About = (props) => {
     <div id="about">
       <img src='./img/me.jpg' alt='me' />
       <div id="introText">
-        <i class="fas fa-quote-left"></i>
+        <i className="fas fa-quote-left"></i>
         <p>Hello, I am Thomas,</p>  
       </div>
       <div id="aboutText">
         <p>I worked 12 years in IT, on application support, management and parameterization, mostly around Enterprise Architecture domain.</p>
         <p>I currently am on a sabbatical year to explore and learn about code, web and application development, design, and many things I wanted to go further with since a long time.</p>
       </div>
-      <div id="dots"><i class="fas fa-ellipsis-h"></i></div>
+      <div id="dots"><i className="fas fa-ellipsis-h"></i></div>
     </div>
   )
 }
@@ -154,11 +154,11 @@ const Contact = (props) => {
       <p id="email">{'thomasdotwagneratlivedotfr'.replace(/dot/g,'.').replace(/at/g,'@')}</p>
       <p id="phone">{'06dotTTdot36dot63dot7T'.replace(/dot/g,'.').replace(/T/g,'2')}</p>
       <p id="networks">
-        <a href='https://twitter.com/Warthas2' target='_blank' rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-        <a href='https://github.com/gnomeWarthas' target='_blank' rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-        <a href='https://www.freecodecamp.org/fcc970cb3b2-e345-4a79-81ac-db98ffb618d1' target='_blank' rel="noopener noreferrer"><i class="fab fa-free-code-camp"></i></a>
-        <a href='https://codepen.io/Warthas' target='_blank' rel="noopener noreferrer"><i class="fab fa-codepen"></i></a>
-        <a href='https://www.linkedin.com/in/thomas-wagner-88897852/' target='_blank' rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href='https://twitter.com/Warthas2' target='_blank' rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+        <a href='https://github.com/gnomeWarthas' target='_blank' rel="noopener noreferrer"><i className="fab fa-github"></i></a>
+        <a href='https://www.freecodecamp.org/fcc970cb3b2-e345-4a79-81ac-db98ffb618d1' target='_blank' rel="noopener noreferrer"><i className="fab fa-free-code-camp"></i></a>
+        <a href='https://codepen.io/Warthas' target='_blank' rel="noopener noreferrer"><i className="fab fa-codepen"></i></a>
+        <a href='https://www.linkedin.com/in/thomas-wagner-88897852/' target='_blank' rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
       </p>
     </div>
   )
