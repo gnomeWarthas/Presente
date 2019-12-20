@@ -43,6 +43,15 @@ const projects=[
       linkLive:'',
       description:'Tiny game developped with pixi.js where you start a little adventure on a small map',
       stack:['react.js', 'pixi.js']
+    },
+    {
+      id:6,
+      image:'./img/default.jpg',
+      name:'Web app',
+      linkGithub:'',
+      linkLive:'',
+      description:'Tiny game developped with pixi.js where you start a little adventure on a small map',
+      stack:['react.js']
     }
   ]
 
