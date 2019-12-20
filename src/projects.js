@@ -47,11 +47,11 @@ const projects=[
     {
       id:6,
       image:'./img/default.jpg',
-      name:'Web app',
+      name:'Chat',
       linkGithub:'',
       linkLive:'',
-      description:'Tiny game developped with pixi.js where you start a little adventure on a small map',
-      stack:['react.js']
+      description:'Chat web application made with react, node, express and socket.io',
+      stack:['react.js','node.js','express', 'socket.io']
     }
   ]
 
