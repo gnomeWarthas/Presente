@@ -225,6 +225,11 @@ section h1{
 #links > a {
   margin-left:5px;
 }
+.inactive{
+  cursor: not-allowed;
+  opacity: 0.2;
+  margin-left:5px;
+}
 /** ANIMATIONS **/
 @keyframes cardPick{
   0% {
