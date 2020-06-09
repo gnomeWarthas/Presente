@@ -10,12 +10,12 @@ const projects=[
     },
     {
       id:2,
-      image:'./img/default.jpg',
+      image:'./img/todolist.jpg',
       name:'Todolist',
-      description:'Todolist web application : organize your tasks by categories, manage due dates ...',
-      linkGithub:'',
+      description:'Todolist web application : organize your tasks by projects, manage due dates ...',
+      linkGithub:'https://github.com/gnomeWarthas/Organise',
       linkLive:'',
-      stack:['React', 'MongoDb', 'SASS', 'GraphQL', 'Apollo' ]
+      stack:['React', 'GraphQL', 'Apollo', 'MySQL', 'SASS' ]
     },
     {
       id:3,
