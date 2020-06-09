@@ -1,7 +1,7 @@
-import React from 'react';
-import './App.css';
-import animateCSS from './Animate';
-import projects from './projects';
+import React from 'react'
+import './App.css'
+import animateCSS from './Animate'
+import projects from './projects'
 
 class App extends React.Component {
   constructor(props){
@@ -151,7 +151,7 @@ const About = (props) => {
 const Contact = (props) => {
   return(
     <div id="contact">
-      <p id="email">{'thomasdotwagneratlivedotfr'.replace(/dot/g,'.').replace(/at/g,'@')}</p>
+      <p id="email">{'thomasdotwagneratuwathdotme'.replace(/dot/g,'.').replace(/atu/g,'@')}</p>
       <p id="phone">{'06dotTTdot36dot63dot7T'.replace(/dot/g,'.').replace(/T/g,'2')}</p>
       <p id="networks">
         <a href='https://twitter.com/Warthas2' target='_blank' rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>

@@ -6,25 +6,25 @@ const projects=[
       description:'A simple portfolio to present my work, who I am and where to find me on the social networks',
       linkGithub:'https://github.com/gnomeWarthas/portfolio',
       linkLive:'https://master.d16nv120z5jzj1.amplifyapp.com/',
-      stack:['react.js', 'css animation']
+      stack:['React', 'css animation']
     },
     {
       id:2,
-      image:'./img/calculator.jpg',
-      name:'Calculator',
-      description:'Javascript online calculator, made as a response for a FreeCodeCamp challenge',
-      linkGithub:'https://github.com/gnomeWarthas/reactCalculator',
-      linkLive:'https://master.ddeb8i7tiiqyq.amplifyapp.com/',
-      stack:['react.js', 'css grid']
+      image:'./img/default.jpg',
+      name:'Todolist',
+      description:'Todolist web application : organize your tasks by categories, manage due dates ...',
+      linkGithub:'',
+      linkLive:'',
+      stack:['React', 'MongoDb', 'SASS', 'GraphQL', 'Apollo' ]
     },
     {
       id:3,
-      image:'./img/drummachine.jpg',
-      name:'Drum machine',
-      description:'Javascript online drum machine with 9 sounds you can trigger',
-      linkGithub:'https://github.com/gnomeWarthas/drumMachine',
-      linkLive:'https://master.dm4s0zkzc9ybr.amplifyapp.com/',
-      stack:['react.js', 'css grid']
+      image:'./img/default.jpg',
+      name:'Social network',
+      description:'Mini social network to keep in touch and share with your friends',
+      linkGithub:'',
+      linkLive:'',
+      stack:['React', 'MongoDb', 'Apollo', 'GraphQL', 'Prisma']
     },
     {
       id:4,
@@ -33,26 +33,27 @@ const projects=[
       linkGithub:'',
       linkLive:'',
       description:'A simple dashboard that you can plug on an online datasource (API with JSON file expected)',
-      stack:['react.js', 'D3.js']
+      stack:['React', 'D3.js']
     },
     {
       id:5,
-      image:'./img/mylittleadventure.jpg',
-      name:'Little adventure',
-      linkGithub:'',
-      linkLive:'',
-      description:'Tiny game developped with pixi.js where you start a little adventure on a small map',
-      stack:['react.js', 'pixi.js']
-    },
-    {
-      id:6,
       image:'./img/default.jpg',
       name:'Chat',
       linkGithub:'',
       linkLive:'',
       description:'Chat web application made with react, node, express and socket.io',
-      stack:['react.js','node.js','express', 'socket.io']
-    }
+      stack:['React','Node','express', 'socket.io']
+    },
+    {
+      id:6,
+      image:'./img/default.jpg',
+      name:'Youtube audio',
+      linkGithub:'', 
+      linkLive:'',
+      description:'Audio version of Youtube, dedicated to listen music or podcasts content',
+      stack:['Vue', 'Typescript', 'GraphQL', 'MySQL']
+    },
+    
   ]
 
   export default projects;
