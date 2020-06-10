@@ -27,7 +27,7 @@ const projects=[
       linkGithub:'',
       linkLive:'',
       stack:['React', 'MongoDb', 'Apollo', 'GraphQL', 'Prisma'],
-      markdown:'noMarkdown'
+      markdown:'empty'
     },
     {
       id:4,
@@ -37,7 +37,7 @@ const projects=[
       linkLive:'',
       description:'A simple dashboard that you can plug on an online datasource (API with JSON file expected)',
       stack:['React', 'D3.js'],
-      markdown:'noMarkdown'
+      markdown:'empty'
     },
     {
       id:5,
@@ -47,7 +47,7 @@ const projects=[
       linkLive:'',
       description:'Chat web application made with react, node, express and socket.io',
       stack:['React','Node','express', 'socket.io'],
-      markdown:'noMarkdown'
+      markdown:'empty'
     },
     {
       id:6,
@@ -57,7 +57,7 @@ const projects=[
       linkLive:'',
       description:'Audio version of Youtube, dedicated to listen music or podcasts content',
       stack:['Vue', 'Typescript', 'GraphQL', 'MySQL'],
-      markdown:'noMarkdown'
+      markdown:'empty'
     },
     
   ]

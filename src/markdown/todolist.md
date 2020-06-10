@@ -1,5 +1,3 @@
-## Todolist
-
 This project is a classic todolist application. You can create tasks, organise and view them by project, set due dates and mark your tasks as done.
 
 ![Todolist](./img/details/todolist/splash.png)
@@ -12,6 +10,7 @@ This project is a classic todolist application. You can create tasks, organise a
     * SASS (Styling)
 
 * **Back-end**
+    * GraphQL API
     * Prisma (GraphQL server)
     * MySQL (Database on Prisma cloud)
 

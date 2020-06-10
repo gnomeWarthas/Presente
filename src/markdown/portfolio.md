@@ -1,5 +1,3 @@
-## Portfolio
-
 My Portfolio project, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ![Portfolio](./img/details/portfolio/splash.png)
@@ -12,6 +10,7 @@ My Portfolio project, bootstrapped with [Create React App](https://github.com/fa
 
 * **Back-end**
     * A js file to store projects info (keep it simple ;))
+    * Markdown files to store the details of projects
 
 ### Features
 

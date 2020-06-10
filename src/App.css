@@ -247,9 +247,16 @@ section h1{
   max-width:540px;
   text-align: center;
 }
-.detail_section > div{
-  text-align: right;
-  padding:20px 30px;
+.detail_header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding:20px 0px;
+  margin: 0px 30px;
+  border-bottom: 1px solid var(--background-color);
+}
+.detail_title{
+  font-size: 1.5em;
 }
 .detail_section i{
   font-size: 1.2em;

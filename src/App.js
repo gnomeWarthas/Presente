@@ -28,7 +28,7 @@ class App extends React.Component {
           content:<Contact />
         } 
       ],
-      details:['portfolio','todolist','noMarkdown'],
+      details:['portfolio','todolist','empty'],
       markdown:[],
       logoUrl: "./logo.png",
       displayedSection:[1,'about'],
@@ -227,7 +227,10 @@ const Detail = (props) => {
 
   return (
     <section id={props.id} style={props.style} className='detail_section'>
-        <div><i className="fas fa-times-circle" onClick={(e)=>{hideDetail(e.target.parentNode.parentNode.id)}}></i></div>
+        <div className='detail_header'>
+          <span className='detail_title'>{props.id[0].toUpperCase()+props.id.slice(1,props.id.length)}</span>
+          <i className="fas fa-times-circle" onClick={(e)=>{hideDetail(e.target.parentNode.parentNode.id)}}></i>
+        </div>
         <article dangerouslySetInnerHTML={{__html: props.markdown}}></article>
     </section>
   )
