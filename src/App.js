@@ -28,8 +28,11 @@ class App extends React.Component {
           content:<Contact />
         } 
       ],
-      details:['portfolio','todolist','empty'],
-      markdown:[],
+      markdown:[
+        {name:'portfolio',content:''},
+        {name:'todolist',content:''},
+        {name:'empty',content:''}
+      ],
       logoUrl: "./logo.png",
       displayedSection:[1,'about'],
     }
@@ -38,15 +41,15 @@ class App extends React.Component {
 
   componentDidMount() {
     // Fill the markdown array (for the project's details)
-    this.state.details.forEach(file=>{
-      let getFile = require(`./markdown/${file}.md`)
-      fetch(getFile)
+    this.state.markdown.forEach((file,index)=>{
+      let getContent = require(`./markdown/${file.name}.md`)
+      fetch(getContent)
       .then(response => {
         return response.text()
       })
       .then(text => {
         let tempArray = this.state.markdown
-        tempArray.push(marked(text))
+        tempArray[index].content=(marked(text))
         this.setState({
           markdown: tempArray
         })
@@ -83,10 +86,9 @@ class App extends React.Component {
       )
     })
     // Détails
-    const details = this.state.markdown.map((content,index)=>{
-      const id = this.state.details[index]
+    const details = this.state.markdown.map((file,index)=>{
       return(
-        <Detail key={`detail-${index}`} markdown={content} id={id} style={{display:'none'}}/>
+        <Detail key={`detail-${index}`} markdown={file.content} id={file.name} style={{display:'none'}}/>
       )
     })
     // Nav menu
