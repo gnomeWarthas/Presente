@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import animateCSS from './Animate'
 import projects from './projects'
+import marked from 'marked'
 
 class App extends React.Component {
   constructor(props){
@@ -27,11 +28,32 @@ class App extends React.Component {
           content:<Contact />
         } 
       ],
+      details:['portfolio','todolist','noMarkdown'],
+      markdown:[],
       logoUrl: "./logo.png",
-      displayedSection:[1,'about']
+      displayedSection:[1,'about'],
     }
     this.handleNavClick = this.handleNavClick.bind(this)
   }
+
+  componentDidMount() {
+    // Fill the markdown array (for the project's details)
+    this.state.details.forEach(file=>{
+      let getFile = require(`./markdown/${file}.md`)
+      fetch(getFile)
+      .then(response => {
+        return response.text()
+      })
+      .then(text => {
+        let tempArray = this.state.markdown
+        tempArray.push(marked(text))
+        this.setState({
+          markdown: tempArray
+        })
+      })
+    })
+  }
+
   handleNavClick(e){
     this.state.sections.forEach(x=>{
       if (parseInt(e.target.id[3])===x.number){
@@ -60,6 +82,13 @@ class App extends React.Component {
         <Section id={x.id} key={x.number} style={(this.state.displayedSection[1] === x.id)?{display:'block'}:{display:'none'}} title={x.title} content={x.content} />
       )
     })
+    // Détails
+    const details = this.state.markdown.map((content,index)=>{
+      const id = this.state.details[index]
+      return(
+        <Detail key={`detail-${index}`} markdown={content} id={id} style={{display:'none'}}/>
+      )
+    })
     // Nav menu
     const navs = this.state.sections.map(x=>{
       return(
@@ -75,6 +104,7 @@ class App extends React.Component {
           </ul>
         </nav>
         {sections}
+        {details}
       </div>
     );
   }
@@ -97,7 +127,7 @@ const NavItem = (props) => {
 }
 const Section = (props) => {
   return(
-    <section id={props.id} style={props.style}>
+    <section id={props.id} style={props.style} className='main_section'>
       <h1>{props.title}</h1>
       {props.content}
     </section>
@@ -107,7 +137,7 @@ const Work = (props) => {
   // Projects
   const projectList = props.content.map(x=>{
     return(
-      <Card id={x.id} key={x.id} name={x.name} image={x.image} description={x.description} linkGithub={x.linkGithub} linkLive={x.linkLive} stack={x.stack.map((a,n)=><li key={n}>{a}</li>)} />
+      <Card id={x.id} key={x.id} name={x.name} image={x.image} description={x.description} linkGithub={x.linkGithub} linkLive={x.linkLive} stack={x.stack.map((a,n)=><li key={n}>{a}</li>)} markdown={x.markdown} />
     )
   })  
   return (
@@ -117,6 +147,17 @@ const Work = (props) => {
   )
 }
 const Card = (props) => {
+
+  const displayDetail = (id) => {
+    // Hide main section
+    animateCSS('#work', 'fadeOut', ()=>{
+      document.getElementById('work').style.display = 'none'
+      // Display detail section
+      document.getElementById(id).style.display='block'
+      animateCSS(`#${id}`, 'fadeInBottom')
+    })
+  }
+
   return(
     <div id={props.id} className='card'>
       <h2>{props.name}</h2>
@@ -128,11 +169,16 @@ const Card = (props) => {
           :<span className='inactive'><img src='./img/icon-web.png' alt='' /></span>
         }
       </div>
-      <p>{props.description}</p>
-      <img src={props.image} alt={props.name} />
-      <ul>
-        {props.stack}
-      </ul>
+      <div className='card-content' onClick={(e)=>{
+        e.stopPropagation()
+        displayDetail(props.markdown)
+      }}>
+        <p>{props.description}</p>
+        <img src={props.image} alt={props.name} />
+        <ul>
+          {props.stack}
+        </ul>
+      </div>
     </div>
   )
 }
@@ -167,4 +213,23 @@ const Contact = (props) => {
     </div>
   )
 }
-export default App;
+const Detail = (props) => {
+
+  const hideDetail = (id) => {
+    // hide the previous displayed section
+    animateCSS('#'+id, 'fadeOutBottom', ()=>{
+      document.getElementById(id).style.display = 'none'
+      // Show the work section
+      document.getElementById('work').style.display = 'block'
+      animateCSS('#work', 'fadeIn')
+    })
+  }
+
+  return (
+    <section id={props.id} style={props.style} className='detail_section'>
+        <div><i className="fas fa-times-circle" onClick={(e)=>{hideDetail(e.target.parentNode.parentNode.id)}}></i></div>
+        <article dangerouslySetInnerHTML={{__html: props.markdown}}></article>
+    </section>
+  )
+}
+export default App

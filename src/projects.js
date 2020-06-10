@@ -6,7 +6,8 @@ const projects=[
       description:'A simple portfolio to present my work, who I am and where to find me on the social networks',
       linkGithub:'https://github.com/gnomeWarthas/portfolio',
       linkLive:'https://master.d16nv120z5jzj1.amplifyapp.com/',
-      stack:['React', 'css animation']
+      stack:['React', 'css animation'],
+      markdown:'portfolio'
     },
     {
       id:2,
@@ -15,7 +16,8 @@ const projects=[
       description:'Todolist web application : organize your tasks by projects, manage due dates ...',
       linkGithub:'https://github.com/gnomeWarthas/Organise',
       linkLive:'',
-      stack:['React', 'GraphQL', 'Apollo', 'MySQL', 'SASS' ]
+      stack:['React', 'GraphQL', 'Apollo', 'MySQL', 'SASS' ],
+      markdown:'todolist'
     },
     {
       id:3,
@@ -24,7 +26,8 @@ const projects=[
       description:'Mini social network to keep in touch and share with your friends',
       linkGithub:'',
       linkLive:'',
-      stack:['React', 'MongoDb', 'Apollo', 'GraphQL', 'Prisma']
+      stack:['React', 'MongoDb', 'Apollo', 'GraphQL', 'Prisma'],
+      markdown:'noMarkdown'
     },
     {
       id:4,
@@ -33,7 +36,8 @@ const projects=[
       linkGithub:'',
       linkLive:'',
       description:'A simple dashboard that you can plug on an online datasource (API with JSON file expected)',
-      stack:['React', 'D3.js']
+      stack:['React', 'D3.js'],
+      markdown:'noMarkdown'
     },
     {
       id:5,
@@ -42,7 +46,8 @@ const projects=[
       linkGithub:'',
       linkLive:'',
       description:'Chat web application made with react, node, express and socket.io',
-      stack:['React','Node','express', 'socket.io']
+      stack:['React','Node','express', 'socket.io'],
+      markdown:'noMarkdown'
     },
     {
       id:6,
@@ -51,7 +56,8 @@ const projects=[
       linkGithub:'', 
       linkLive:'',
       description:'Audio version of Youtube, dedicated to listen music or podcasts content',
-      stack:['Vue', 'Typescript', 'GraphQL', 'MySQL']
+      stack:['Vue', 'Typescript', 'GraphQL', 'MySQL'],
+      markdown:'noMarkdown'
     },
     
   ]
