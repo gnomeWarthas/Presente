@@ -164,7 +164,11 @@ const Card = (props) => {
     <div id={props.id} className='card'>
       <h2>{props.name}</h2>
       <div id="links">
-        <a href={props.linkGithub} alt='View code' target='_blank' rel="noopener noreferrer"><img src='./img/icon-github.png' alt=''/></a>
+        { 
+          (props.linkGithub !== '')
+          ?<a href={props.linkGithub} alt="Live demo" target='_blank' rel="noopener noreferrer"><img src='./img/icon-github.png' alt='' /></a>
+          :<span className='inactive'><img src='./img/icon-github.png' alt='' /></span>
+        }
         { 
           (props.linkLive !== '')
           ?<a href={props.linkLive} alt="Live demo" target='_blank' rel="noopener noreferrer"><img src='./img/icon-web.png' alt='' /></a>
