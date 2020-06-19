@@ -14,7 +14,11 @@ My Portfolio project, bootstrapped with [Create React App](https://github.com/fa
 
 ### Features
 
-I chose to use react.js for this portfolio as I was studying this topic back then and needed to practice it. As it was my first project in react, I used Create React App to make it clean and easy.
+This is a simple portfolio. There are three parts :
+
+* About : A quick presentation of myself
+* Work : some cards to present a list of project with the possibility to add a markdown file by project to describe it
+* Contact : email, telephone, and social networks
 
 ### Design
 

@@ -16,14 +16,27 @@ This project is a classic todolist application. You can create tasks, organise a
 
 ### Features
 
-Create and update tasks with description, due time and project :
+* Account creation and authentication
+* CRUD operation on tasks and projects
+* Task creation
+    * Name and description
+    * Due date
+    * Linked project
+*  Project creation
+    * Name
+    * Color
+* Specific views
+    * Today's tasks
+    * Tasks by project
+    * Task list
+    * Project list
+
+### Screenshots
 
 ![Todolist](./img/details/todolist/createUpdateTask.png)
 
-Follow your tasks by project :
-
 ![Todolist](./img/details/todolist/tasksByProject.png)
 
-Easy access to your daily (and late) tasks :
-
 ![Todolist](./img/details/todolist/daily.png)
+
+![Todolist](./img/details/todolist/authentication.png)
