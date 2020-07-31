@@ -469,12 +469,12 @@ section h1{
   }
 
 }
-@media (max-width:430px){
+@media (max-width:430px), (min-device-width : 320px) and (max-device-width : 480px){
   #aboutText{
-    width:300px;
+    width:80vw;
   }
   #introText{
-    width:320px;
+    width:80vw;
   }
   #introText i{
     margin:0px 30px 0px 0px;
@@ -483,15 +483,12 @@ section h1{
     align-self: center;
     background-color: var(--background-color);
   }
-  #work{
-    grid-template-columns: repeat(1,240px);
-  }
   .detail_section{
-    width: 300px;
+    width: 90vw;
     margin: 15px 0px;
   }
   .detail_section img{
-    max-width:270px;
+    max-width:80vw;
     text-align: center;
   }
   .detail_section > article{
@@ -501,39 +498,23 @@ section h1{
     padding:20px 0px;
     margin: 0px 15px;
   }
-}
-
-/** MOBILE SCREEN **/
-@media (min-device-width : 320px) and (max-device-width : 480px) {
-  #aboutText{
-    width:300px;
-  }
-  #introText{
-    width:320px;
-  }
-  #introText i{
-    margin:0px 30px 0px 0px;
-  }
-  section{
-    align-self: center;
-    background-color: var(--background-color);
-  }
   #work{
-    grid-template-columns: repeat(1,240px);
+    grid-template-columns: repeat(1,80vw);
   }
-  .detail_section{
-    width: 300px;
-    margin: 15px 0px;
+  .card{
+    width: auto;
+    height:auto;
   }
-  .detail_section img{
-    max-width:270px;
-    text-align: center;
+  .card-content{
+    display:flex;
+    flex-direction: column;
   }
-  .detail_section > article{
-    margin:15px;
+  .card-content > img{
+    max-width:100%;
+    max-height: 50%;
+    height:auto;
   }
-  .detail_header{
-    padding:20px 0px;
-    margin: 0px 15px;
+  .card-content > ul{
+    width: auto;
   }
 }
