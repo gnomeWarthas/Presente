@@ -4,7 +4,8 @@
   --background-color-more:rgb(143, 155, 155);
   --background-color-less:rgb(209, 218, 218);
   --shadow-color:rgba(166, 179, 179, 0.5);
-  --text-color:rgb(20,40,40);
+  --text-color:rgb(20, 40, 40);
+  --text-color-light:rgb(97, 104, 104);
 }
 body{
   color:var(--text-color);
@@ -59,6 +60,25 @@ nav li:hover{
   margin-left:15px;
   max-height:35px;
   border:none;
+}
+#logo > .logoText{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  font-size: large;
+}
+.logoText p{
+  margin:0;
+}
+.logoTitle{
+  font-size: 1.1em;
+}
+.subText{
+  font-size: 0.6em;
+}
+.lightText{
+  color: var(--text-color-light);
 }
 /** SECTIONS **/
 section{
@@ -422,6 +442,8 @@ section h1{
   }
 }
 /** MEDIA QUERIES **/
+
+/** SMALL SCREEN **/
 @media (max-width:700px){
   section{
     align-self: center;
@@ -429,5 +451,89 @@ section h1{
   }
   #work{
     grid-template-columns: repeat(2,220px);
+  }
+  .detail_section{
+    width: 420px;
+    margin: 25px 0px;
+  }
+  .detail_section img{
+    max-width:390px;
+    text-align: center;
+  }
+  .detail_section > article{
+    margin:15px;
+  }
+  .detail_header{
+    padding:20px 0px;
+    margin: 0px 15px;
+  }
+
+}
+@media (max-width:430px){
+  #aboutText{
+    width:300px;
+  }
+  #introText{
+    width:320px;
+  }
+  #introText i{
+    margin:0px 30px 0px 0px;
+  }
+  section{
+    align-self: center;
+    background-color: var(--background-color);
+  }
+  #work{
+    grid-template-columns: repeat(1,240px);
+  }
+  .detail_section{
+    width: 300px;
+    margin: 15px 0px;
+  }
+  .detail_section img{
+    max-width:270px;
+    text-align: center;
+  }
+  .detail_section > article{
+    margin:15px;
+  }
+  .detail_header{
+    padding:20px 0px;
+    margin: 0px 15px;
+  }
+}
+
+/** MOBILE SCREEN **/
+@media (min-device-width : 320px) and (max-device-width : 480px) {
+  #aboutText{
+    width:300px;
+  }
+  #introText{
+    width:320px;
+  }
+  #introText i{
+    margin:0px 30px 0px 0px;
+  }
+  section{
+    align-self: center;
+    background-color: var(--background-color);
+  }
+  #work{
+    grid-template-columns: repeat(1,240px);
+  }
+  .detail_section{
+    width: 300px;
+    margin: 15px 0px;
+  }
+  .detail_section img{
+    max-width:270px;
+    text-align: center;
+  }
+  .detail_section > article{
+    margin:15px;
+  }
+  .detail_header{
+    padding:20px 0px;
+    margin: 0px 15px;
   }
 }

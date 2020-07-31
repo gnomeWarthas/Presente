@@ -33,7 +33,7 @@ class App extends React.Component {
         {name:'todolist',content:''},
         {name:'empty',content:''}
       ],
-      logoUrl: "./logo.png",
+      logoUrl: "./logo.svg",
       displayedSection:[1,'about'],
     }
     this.handleNavClick = this.handleNavClick.bind(this)
@@ -116,7 +116,7 @@ class App extends React.Component {
 const Logo = (props) => {
   return (
     <div id="logo">
-      <img src={props.img} id="logo" alt="" />
+      <img src={props.img} id="logo" alt="" />  
     </div>
   )
 }
