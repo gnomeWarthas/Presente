@@ -80,23 +80,17 @@ class App extends React.Component {
   }
   render(){
     // Sections
-    const sections = this.state.sections.map(x=>{
-      return(
+    const sections = this.state.sections.map(x=>
         <Section id={x.id} key={x.number} style={(this.state.displayedSection[1] === x.id)?{display:'block'}:{display:'none'}} title={x.title} content={x.content} />
-      )
-    })
+    )
     // Détails
-    const details = this.state.markdown.map((file,index)=>{
-      return(
+    const details = this.state.markdown.map((file,index)=>
         <Detail key={`detail-${index}`} markdown={file.content} id={file.name} style={{display:'none'}}/>
-      )
-    })
+    )
     // Nav menu
-    const navs = this.state.sections.map(x=>{
-      return(
+    const navs = this.state.sections.map(x=>
         <NavItem id={x.id} number={x.number} key={x.number} handleNavClick={this.handleNavClick} class={(x.number===1)?'currentNav':''} />
-      )
-    })
+    )
     return (
       <div id="app">
         <nav>
@@ -113,28 +107,25 @@ class App extends React.Component {
 }
 
 // stateless functional components
-const Logo = (props) => {
-  return (
-    <div id="logo">
-      <img src={props.img} id="logo" alt="" />  
-    </div>
-  )
-}
-const NavItem = (props) => {
-  return(
-    <li id={"nav"+props.number+props.id} onClick={props.handleNavClick} className={props.class}>
-        {props.id.toUpperCase()}
-    </li>
-  )
-}
-const Section = (props) => {
-  return(
-    <section id={props.id} style={props.style} className='main_section'>
-      <h1>{props.title}</h1>
-      {props.content}
-    </section>
-  )
-}
+const Logo = (props) => (
+  <div id="logo">
+    <img src={props.img} id="logo" alt="" />  
+  </div>
+)
+
+const NavItem = (props) => (
+  <li id={"nav"+props.number+props.id} onClick={props.handleNavClick} className={props.class}>
+      {props.id.toUpperCase()}
+  </li>
+)
+
+const Section = (props) => (
+  <section id={props.id} style={props.style} className='main_section'>
+    <h1>{props.title}</h1>
+    {props.content}
+  </section>
+)
+
 const Work = (props) => {
   // Projects
   const projectList = props.content.map(x=>{
@@ -188,37 +179,35 @@ const Card = (props) => {
     </div>
   )
 }
-const About = (props) => {
-  return(
-    <div id="about">
-      <img src='./img/me.jpg' alt='me' />
-      <div id="introText">
-        <i className="fas fa-quote-left"></i>
-        <p>Hello, I am Thomas,</p>  
-      </div>
-      <div id="aboutText">
-        <p>I worked 12 years in IT, on application support, management and parameterization, mostly around Enterprise Architecture domain.</p>
-        <p>I currently am on a sabbatical year to explore and learn about code, web and application development, design, and many things I wanted to go further with since a long time.</p>
-      </div>
-      <div id="dots"><i className="fas fa-ellipsis-h"></i></div>
+const About = (props) => (
+  <div id="about">
+    <img src='./img/me.jpg' alt='me' />
+    <div id="introText">
+      <i className="fas fa-quote-left"></i>
+      <p>Hello, I am Thomas,</p>  
     </div>
-  )
-}
-const Contact = (props) => {
-  return(
-    <div id="contact">
-      <p id="email">{'thomasdotwagneratuwathdotme'.replace(/dot/g,'.').replace(/atu/g,'@')}</p>
-      <p id="phone">{'06dotTTdot36dot63dot7T'.replace(/dot/g,'.').replace(/T/g,'2')}</p>
-      <p id="networks">
-        <a href='https://twitter.com/Warthas2' target='_blank' rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
-        <a href='https://github.com/gnomeWarthas' target='_blank' rel="noopener noreferrer"><i className="fab fa-github"></i></a>
-        <a href='https://www.freecodecamp.org/fcc970cb3b2-e345-4a79-81ac-db98ffb618d1' target='_blank' rel="noopener noreferrer"><i className="fab fa-free-code-camp"></i></a>
-        <a href='https://codepen.io/Warthas' target='_blank' rel="noopener noreferrer"><i className="fab fa-codepen"></i></a>
-        <a href='https://www.linkedin.com/in/thomas-wagner-88897852/' target='_blank' rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
-      </p>
+    <div id="aboutText">
+      <p>I worked 12 years in IT, on application support, management and parameterization, mostly around Enterprise Architecture domain.</p>
+      <p>I currently am on a sabbatical year to explore and learn about code, web and application development, design, and many things I wanted to go further with since a long time.</p>
     </div>
-  )
-}
+    <div id="dots"><i className="fas fa-ellipsis-h"></i></div>
+  </div>
+)
+
+const Contact = (props) => (
+  <div id="contact">
+    <p id="email">{'thomasdotwagneratuwathdotme'.replace(/dot/g,'.').replace(/atu/g,'@')}</p>
+    <p id="phone">{'06dotTTdot36dot63dot7T'.replace(/dot/g,'.').replace(/T/g,'2')}</p>
+    <p id="networks">
+      <a href='https://twitter.com/Warthas2' target='_blank' rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+      <a href='https://github.com/gnomeWarthas' target='_blank' rel="noopener noreferrer"><i className="fab fa-github"></i></a>
+      <a href='https://www.freecodecamp.org/fcc970cb3b2-e345-4a79-81ac-db98ffb618d1' target='_blank' rel="noopener noreferrer"><i className="fab fa-free-code-camp"></i></a>
+      <a href='https://codepen.io/Warthas' target='_blank' rel="noopener noreferrer"><i className="fab fa-codepen"></i></a>
+      <a href='https://www.linkedin.com/in/thomas-wagner-88897852/' target='_blank' rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
+    </p>
+  </div>
+)
+
 const Detail = (props) => {
 
   const hideDetail = (id) => {
