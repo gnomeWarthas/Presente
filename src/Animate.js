@@ -1,4 +1,4 @@
-const animateCSS = (element, animationName, callback) => {
+export const animateCSS = (element, animationName, callback) => {
     const node = document.querySelector(element)
     node.classList.add(animationName)
 
@@ -11,5 +11,3 @@ const animateCSS = (element, animationName, callback) => {
 
     node.addEventListener('animationend', handleAnimationEnd)
 }
-
-export default animateCSS;
