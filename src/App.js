@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { animateCSS } from './Animate'
 import { projects } from './projects'
-import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, NavLink, useLocation } from "react-router-dom"
+import { TransitionGroup, CSSTransition } from "react-transition-group"
 import marked from 'marked'
 
 import './App.scss'
@@ -57,26 +58,29 @@ export const App = () => {
             </li>
           </ul>
         </nav>
-        <Switch>
-          <Route path='(/|/about)'>
-            <Section title='About me'>
-              <About />
-            </Section>
-          </Route>
-          <Route path='/work'>
-            <Section title='Work'>
-              <Work content={projects}/>
-              { details }
-            </Section>
-          </Route>
-          <Route path='/contact'>
-            <Section title='Contact'>
-              <Contact />
-            </Section>
-          </Route>
-        </Switch>
+        <AnimatedSwitch details={details}/>
       </div>
     </Router>
+  )
+}
+
+// Animated switch
+const AnimatedSwitch = (props) => {
+  const location = useLocation()
+  return (
+    <TransitionGroup>
+      <CSSTransition
+        key={location.key}
+        classNames="fade"
+        timeout={500}
+      >
+        <Switch location={location}>
+          <Route path='(/|/about)' children={<Section title='About me'><About /></Section>} />
+          <Route path='/work' children={<Section title='Work'><Work content={projects}/>{props.details}</Section>} />
+          <Route path='/contact' children={<Section title='Contact'><Contact /></Section>} />
+        </Switch>
+      </CSSTransition>
+    </TransitionGroup>
   )
 }
 
@@ -181,7 +185,7 @@ const Detail = (props) => {
       animateCSS('#'+id, 'fadeOutBottom', ()=>{
       document.getElementById(id).style.display = 'none'
       // Show the work section
-      document.querySelector('.work').style.display = 'block'
+      document.querySelector('.work').style.display = 'grid'
       animateCSS('.work', 'fadeIn')
     })
   }

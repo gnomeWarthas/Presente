@@ -20,7 +20,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 #app{
   display:flex;
   flex-direction:column;
@@ -333,6 +332,26 @@ code {
 }
 
 /** ANIMATIONS **/
+.fade-enter {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: opacity 500ms ease-in, transform 500ms ease-in;
+}
+.fade-exit {
+  position: absolute;
+  top:92px;
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 300ms ease-out, transform 500ms ease-out;
+}
 @keyframes cardPick{
   0% {
     transform: translateY(0px);
@@ -386,34 +405,6 @@ code {
      opacity: 1;
   }
 }
-.fadeInLeft {
-  animation-name: fadeInLeft;
-  animation-duration:0.5s;
-}
-@keyframes fadeInLeft {
-  0% {
-     opacity: 0;
-     transform: translateX(-50px);
-  }
-  100% {
-     opacity: 1;
-     transform: translateX(0);
-  }
-}
-.fadeInRight {
-  animation-name: fadeInRight;
-  animation-duration:0.5s;
-}
-@keyframes fadeInRight {
-  0% {
-     opacity: 0;
-     transform: translateX(50px);
-  }
-  100% {
-     opacity: 1;
-     transform: translateX(0);
-  }
-}
 .fadeInBottom {
   animation-name: fadeInBottom;
   animation-duration:0.5s;
@@ -441,34 +432,6 @@ code {
      opacity: 0;
   }
 }
-.fadeOutLeft {
-  animation-name: fadeOutLeft;
-  animation-duration:0.5s;
-}
-@keyframes fadeOutLeft {
-  0% {
-     opacity: 1;
-     transform: translateX(0);
-  }
-  100% {
-     opacity: 0;
-     transform: translateX(-50px);
-  }
-}
-.fadeOutRight {
-  animation-name: fadeOutRight;
-  animation-duration:0.5s;
-}
-@keyframes fadeOutRight {
-  0% {
-     opacity: 1;
-     transform: translateX(0);
-  }
-  100% {
-     opacity: 0;
-     transform: translateX(50px);
-  }
-}
 .fadeOutBottom {
   animation-name: fadeOutBottom;
   animation-duration:0.5s;
@@ -487,76 +450,80 @@ code {
 
 /** SMALL SCREEN **/
 @media (max-width:700px){
-  section{
-    align-self: center;
-    background-color: var(--background-color);
-  }
-  #work{
+  .work{
     grid-template-columns: repeat(2,220px);
   }
-  .detail_section{
+  .detail{
     width: 420px;
     margin: 25px 0px;
-  }
-  .detail_section img{
-    max-width:390px;
-    text-align: center;
-  }
-  .detail_section > article{
-    margin:15px;
-  }
-  .detail_header{
-    padding:20px 0px;
-    margin: 0px 15px;
+
+    &__header{
+      margin: 0px 15px;
+    }
+
+    &__content{
+      margin:15px;
+
+      &img{
+        max-width:390px;
+      }
+    }
   }
 
 }
 @media (max-width:430px), (min-device-width : 320px) and (max-device-width : 480px){
-  #aboutText{
-    width:80vw;
+
+  .about{
+    &__intro{
+      width:80vw;
+    }
+    &__quote-image{
+      margin:0px 30px 0px 0px;
+    }
+    &__text-group{
+      width:80vw;
+    }
   }
-  #introText{
-    width:80vw;
-  }
-  #introText i{
-    margin:0px 30px 0px 0px;
-  }
-  section{
-    align-self: center;
-    background-color: var(--background-color);
-  }
-  .detail_section{
-    width: 90vw;
-    margin: 15px 0px;
-  }
-  .detail_section img{
-    max-width:80vw;
-    text-align: center;
-  }
-  .detail_section > article{
-    margin:15px;
-  }
-  .detail_header{
-    padding:20px 0px;
-    margin: 0px 15px;
-  }
-  #work{
+
+  .work{
     grid-template-columns: repeat(1,80vw);
   }
+
   .card{
     width: auto;
     height:auto;
+
+    &__content{
+      display:flex;
+      flex-direction: column;
+    }
+
+    &__image{
+      max-width:100%;
+      max-height: 50%;
+      height:auto;
+    }
+
+    &__stack{
+      width: auto;
+    }
   }
-  .card-content{
-    display:flex;
-    flex-direction: column;
+  
+  .detail{
+    width: 90vw;
+    margin: 15px 0px;
+
+    &__header{
+      margin: 0px 15px;
+    }
+
+    &__content{
+      margin:15px;
+
+      &img{
+        max-width:80vw;
+      }
+    }
   }
-  .card-content > img{
-    max-width:100%;
-    max-height: 50%;
-    height:auto;
-  }
-  .card-content > ul{
-    width: auto;
-  }
+
 }
