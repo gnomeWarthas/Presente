@@ -38,7 +38,7 @@ export const App = () => {
           }
         })
     })
-  },[markdownLoaded])
+  },[markdownLoaded,workDetails])
 
   // Détails
   const details = workDetails.files.map((file,index)=>
