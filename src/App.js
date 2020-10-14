@@ -77,6 +77,11 @@ const AnimatedSwitch = (props) => {
         key={location.key}
         classNames="fade"
         timeout={500}
+        onExit={()=>{
+          document.querySelector('.fade-exit').style.display = 'none'
+        }}
+
+        
       >
         <Switch location={location}>
           <Route path='(/|/about)' children={<Section title='About me'><About /></Section>} />
