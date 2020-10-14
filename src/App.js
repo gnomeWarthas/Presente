@@ -19,6 +19,7 @@ export const App = () => {
       ]
     }
   )
+  const [markdownLoaded, setMarkdownLoaded] = useState(false)
 
   useEffect(() => {
     // Fill the markdown array (for the project's details)
@@ -32,9 +33,12 @@ export const App = () => {
           let swapObj = workDetails
           swapObj.files[index].content = (marked(text))
           setWorkDetails(swapObj)
+          if (file.name === 'empty'){
+            setMarkdownLoaded(true)
+          }
         })
     })
-  },[])
+  },[markdownLoaded])
 
   // Détails
   const details = workDetails.files.map((file,index)=>
@@ -180,21 +184,29 @@ const Contact = (props) => (
 
 const Detail = (props) => {
 
-  const hideDetail = (id) => {
-      // hide the previous displayed section
-      animateCSS('#'+id, 'fadeOutBottom', ()=>{
-      document.getElementById(id).style.display = 'none'
-      // Show the work section
-      document.querySelector('.work').style.display = 'grid'
-      animateCSS('.work', 'fadeIn')
-    })
+  const hideDetail = () => {
+    for (const detail of document.getElementsByClassName('detail')){
+      if (detail.style.display === 'block'){
+        animateCSS('#'+detail.id, 'fadeOutBottom', ()=>{
+          detail.style.display = 'none'
+          // Show the work section
+          document.querySelector('.work').style.display = 'grid'
+          animateCSS('.work', 'fadeIn')
+        })
+      } 
+    }
   }
+
+  document.addEventListener('click',hideDetail)
 
   return (
     <section id={props.id} style={props.style} className='detail'>
         <div className='detail__header'>
           <span className='detail__title'>{props.id[0].toUpperCase()+props.id.slice(1,props.id.length)}</span>
-          <i className="fas fa-times-circle detail__close-btn" onClick={(e)=>{hideDetail(e.target.parentNode.parentNode.id)}}></i>
+          <i className="fas fa-times-circle detail__close-btn" onClick={(e)=>{
+            hideDetail()
+            e.stopPropagation()
+            }}></i>
         </div>
         <article className="detail__content" dangerouslySetInnerHTML={{__html: props.content}}></article>
     </section>

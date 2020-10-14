@@ -323,8 +323,9 @@ code {
 
   &__content{
     margin:30px;
+    padding-bottom: 20px;
 
-    &img{
+    img{
       max-width:540px;
       text-align: center;
     }
@@ -334,23 +335,20 @@ code {
 /** ANIMATIONS **/
 .fade-enter {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translateY(10px);
 }
 .fade-enter-active {
   opacity: 1;
   transform: translateX(0px);
-  transition: opacity 500ms ease-in, transform 500ms ease-in;
+  transition: all 500ms ease-in-out;
 }
 .fade-exit {
   position: absolute;
-  top:92px;
-  opacity: 1;
-  transform: translateX(0);
+  top:0px;
+  opacity: 0;
 }
 .fade-exit-active {
   opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 300ms ease-out, transform 500ms ease-out;
 }
 @keyframes cardPick{
   0% {
@@ -464,7 +462,7 @@ code {
     &__content{
       margin:15px;
 
-      &img{
+      img{
         max-width:390px;
       }
     }
@@ -508,7 +506,7 @@ code {
       width: auto;
     }
   }
-  
+
   .detail{
     width: 90vw;
     margin: 15px 0px;
@@ -520,7 +518,7 @@ code {
     &__content{
       margin:15px;
 
-      &img{
+      img{
         max-width:80vw;
       }
     }
