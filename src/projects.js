@@ -5,7 +5,7 @@ export const projects = [
     name:'Portfolio',
     description:'A simple portfolio to present my work, who I am and where to find me on the social networks',
     linkGithub:'https://github.com/gnomeWarthas/portfolio',
-    linkLive:'https://master.d16nv120z5jzj1.amplifyapp.com/',
+    linkLive:'https://www.wath.me/',
     stack:['React', 'sass', 'bem'],
     markdown:'portfolio'
   },
