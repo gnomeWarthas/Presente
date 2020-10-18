@@ -2,36 +2,36 @@ This project is a classic todolist application. You can create tasks, organise a
 
 ![Todolist](./img/details/todolist/splash.png)
 
-### Stack
+## Stack
 
 * **Front-end**
-    * React.js (with react router)
-    * Apollo (graphQL client)
-    * SASS (Styling)
+  * Framework : React.js
+  * GraphQL client : Apollo
+  * CSS styling : SASS & BEM
 
 * **Back-end**
-    * GraphQL API
-    * Prisma (GraphQL server)
-    * MySQL (Database on Prisma cloud)
+  * API protocol : GraphQL
+  * GraphQlerver : Prisma & GraphQL Yoga
+  * Database : MySQL on Prisma cloud
 
-### Features
+## Features
 
 * Account creation and authentication
 * CRUD operation on tasks and projects
 * Task creation
-    * Name and description
-    * Due date
-    * Linked project
-*  Project creation
-    * Name
-    * Color
+  * Name and description
+  * Due date
+  * Linked project
+* Project creation
+  * Name
+  * Color
 * Specific views
-    * Today's tasks
-    * Tasks by project
-    * Task list
-    * Project list
+  * Today's tasks
+  * Tasks by project
+  * Task list
+  * Project list
 
-### Screenshots
+## Screenshots
 
 ![Todolist](./img/details/todolist/createUpdateTask.png)
 

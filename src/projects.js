@@ -6,7 +6,7 @@ export const projects = [
     description:'A simple portfolio to present my work, who I am and where to find me on the social networks',
     linkGithub:'https://github.com/gnomeWarthas/portfolio',
     linkLive:'https://master.d16nv120z5jzj1.amplifyapp.com/',
-    stack:['React', 'css animation'],
+    stack:['React', 'sass', 'bem'],
     markdown:'portfolio'
   },
   {
@@ -14,16 +14,16 @@ export const projects = [
     image:'./img/todolist.jpg',
     name:'Todolist',
     description:'Todolist web application : organize your tasks by projects, manage due dates ...',
-    linkGithub:'https://github.com/gnomeWarthas/Organise',
-    linkLive:'',
-    stack:['React', 'GraphQL', 'Apollo', 'MySQL', 'SASS' ],
+    linkGithub:'https://github.com/t0mwagner/todolist',
+    linkLive:'https://wath-todolist.herokuapp.com/',
+    stack:['React', 'GraphQL', 'Apollo', 'Prisma' ,'MySQL' ],
     markdown:'todolist'
   },
   {
     id:3,
     image:'./img/default.jpg',
-    name:'Social network',
-    description:'Mini social network to keep in touch and share with your friends',
+    name:'Storiz',
+    description:'Write your own stories or contribute to others',
     linkGithub:'',
     linkLive:'',
     stack:['React', 'MongoDb', 'Apollo', 'GraphQL', 'Prisma'],
